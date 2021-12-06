@@ -1,0 +1,69 @@
+/* .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+} */
+
+body {
+  background-color: hsl(217, 54%, 11%);
+}
+
+hr {
+  background-color: hsl(215, 32%, 27%);
+}
+
+.card {
+  position: absolute;
+  background-color: hsl(216, 50%, 16%);
+  color: gray;
+  border-radius: 3%;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.view-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 150px;
+  margin: auto;
+  display: none;
+}
+
+.card-img-top {
+  padding: 3%;
+  border-radius: 3%;
+}
+
+.card:hover .view-icon {
+  display: block;
+}
+
+.card:hover .card-img-top {
+  background-color: wheat;
+}
+
+.clock-section {
+  text-align: right;
+}
+
+.avatar {
+  width: 10%;
+}
+
+.price-text {
+  color: hsl(178, 100%, 50%);
+}
+
+.price-section {
+  padding-top: 3%;
+}
+
+.author-text:hover {
+  color: hsl(178, 100%, 50%);
+}
