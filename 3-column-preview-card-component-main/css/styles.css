@@ -1,0 +1,45 @@
+body {
+  background-color: hsl(0, 0%, 95%);
+}
+
+.center-section {
+  margin-top: 80px;
+}
+
+.sedans-section {
+  background-color: hsl(31, 77%, 52%);
+  padding: 30px 20px;
+  border-radius: 20px 0 0 20px;
+}
+
+.suvs-section {
+  background-color: hsl(184, 100%, 22%);
+  padding: 30px 20px;
+}
+
+.luxurys-section {
+  background-color: hsl(179, 100%, 13%);
+  padding: 30px 20px;
+  border-radius: 0px 20px 20px 0px;
+}
+
+img {
+  margin-bottom: 20px;
+}
+
+p {
+  color: hsla(0, 0%, 100%, 0.75);
+  line-height: 2;
+  font-family: "Lexend Deca", sans-serif;
+  margin: 20px 0;
+}
+
+h1 {
+  color: hsl(0, 0%, 95%);
+  font-family: "Big Shoulders Display", cursive;
+}
+
+.btn {
+  background-color: hsl(0, 0%, 95%);
+  margin-top: 20px;
+}
