@@ -11,6 +11,8 @@ h4 {
   height: 20%;
   background-color: hsl(223, 31%, 20%);
   border-radius: 10px;
+  text-align: right;
+  color: white;
 }
 
 .keypad {
@@ -50,4 +52,8 @@ h4 {
 .btn-div {
   padding-right: 0px;
   padding-left: 2px;
+}
+
+.label {
+  margin: 30px 10px 0px 0px;
 }
