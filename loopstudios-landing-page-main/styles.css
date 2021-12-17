@@ -1,0 +1,71 @@
+:root {
+  --main-text: "Josefin Sans", sans-serif;
+  --logo-text: "Alata", sans-serif;
+}
+
+.container-fluid {
+  padding: 2% 8%;
+}
+
+/* introduction section */
+
+.introduction {
+  background-image: url("images/desktop/image-hero.jpg");
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+}
+
+.logo {
+  font-family: var(--logo-text);
+}
+.nav-menu {
+  color: white;
+  padding-left: 20px;
+  font-family: var(--logo-text);
+}
+
+.nav-menu:hover {
+  color: white;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
+
+.heading-wrapper {
+  margin: 0px 0px;
+}
+
+.heading {
+  display: inline-block;
+  border-color: white;
+  border: solid white;
+  padding: 15px;
+  margin-top: 12%;
+  color: white;
+  font-family: var(--main-text);
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+/* about section */
+.about {
+  margin: 50px 0 50px 0;
+}
+.about-content {
+  font-family: var(--main-text);
+  padding: 50px 30px;
+}
+
+.about-heading {
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.p {
+  font-size: 2rem;
+  line-height: 1.5;
+}
