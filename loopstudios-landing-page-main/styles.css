@@ -7,6 +7,11 @@
   padding: 2% 8%;
 }
 
+h1 {
+  font-family: var(--main-text);
+  font-weight: bold;
+}
+
 /* introduction section */
 
 .introduction {
@@ -65,7 +70,78 @@
   line-height: 1.5;
 }
 
-.p {
-  font-size: 2rem;
+p {
+  font-size: 1.5rem;
   line-height: 1.5;
+}
+
+/* our creations section */
+.creations-container1 {
+  margin-top: 5%;
+}
+.img-fluid {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.507),
+    rgba(255, 255, 255, 0)
+  );
+}
+.img-fluid:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.see-all {
+  font-family: var(--main-text);
+  font-weight: bold;
+}
+.img-wrapper {
+  position: relative;
+}
+.description {
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+  color: white;
+  font-size: 2rem;
+}
+
+/* footer section */
+.challenge {
+  text-align: center;
+  margin-top: 20px;
+}
+.footer {
+  background-color: black;
+  color: white;
+}
+.copyright {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+.contact-us-wrapper {
+  text-align: right;
+}
+.social-icon {
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+h3 {
+  padding: 20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-text);
+}
+li {
+  float: left;
+  padding-left: 20px;
+  font-family: var(--main-text);
+}
+.challenge-text {
+  font-size: 16px;
+  font-family: var(--main-text);
 }
