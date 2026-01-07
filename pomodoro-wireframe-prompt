@@ -1,0 +1,101 @@
+Version 1
+Create a mobile app wireframe for a minimalist Pomodoro productivity app designed for Indian users. The timer is fixed: 25-minute focus and 5-minute break. Breaks DO NOT auto-start; the user manually starts the break. No long breaks. Include UI text in English. The interface should feel calm, clean, modern, spacing similar to Apple’s design language.
+
+Create wireframes for these screens:
+
+1. Home / Focus timer (before starting):
+- Large central timer reading “25:00”
+- Subtitle: “Focus Time”
+- A single CTA button: “Start Focus Session”
+- Small horizontal labels row at the bottom: UPSC, JEE, NEET, Work, Coding
+- Language selector (EN | HI | TA)
+
+2. Active Focus Session:
+- Countdown at the center
+- Subtitle: “Focusing…”
+- Buttons: Pause, Stop
+- Current label displayed near top
+
+3. Focus Complete Screen:
+- Celebration message: “Focus Complete!”
+- Summary text: “You completed 25 minutes.”
+- CTA: “Start 5-minute Break”
+- Session label displayed
+
+4. Break Session (active):
+- Timer reading “05:00”
+- Subtitle: “Break Time”
+- Buttons: Pause, Skip
+
+5. Break Complete Screen:
+- Title: “Break Over!”
+- CTA: “Start Next Focus Session”
+
+6. Stats screen:
+- Today stats: number of Pomodoros completed, total focus minutes
+- Weekly bar chart
+- Top labels section (UPSC, Work, Coding)
+
+7. Settings screen:
+- Language selector (EN, HI, TA)
+- Notification toggles (Focus end, Break end)
+- Exam presets selection (labels only)
+- Timezone: Asia/Kolkata
+
+Use simple greyscale wireframe styling: clear boxes, lines, placeholders, minimal icons. No color styling required. Make everything legible and structured. The output should look like high-fidelity grayscale wireframes for a real mobile app.
+
+Version 2
+
+Generate high-fidelity mobile UI wireframes for a Pomodoro timer app designed for Indian students and professionals. Style should follow minimalist Material Design with clean lines, balanced spacing, consistent grid layout, and clear hierarchy. Use greyscale wireframe components only.
+
+App rules to follow:
+- Pomodoro cycle is FIXED: 25-minute focus and 5-minute break.
+- Break DOES NOT auto-start; user manually taps “Start Break”.
+- No long-break cycle.
+- Exam presets are labels only (UPSC, JEE, NEET, Work, Coding).
+- App will support English, Hindi, and Tamil (show EN/HI/TA selector).
+- Mobile-only design.
+
+Create the following wireframes:
+
+1. Focus Timer (idle):
+- Timer text “25:00” centered
+- Below text: “Focus Time”
+- Large button: “Start Focus”
+- Small cycle progress indicator (0/4 cycles)
+- Label chips at the bottom
+
+2. Active Focus:
+- Large countdown (e.g., 17:42)
+- Header showing selected label (e.g., UPSC)
+- Buttons: Pause | Stop
+- Motivational tip area
+
+3. Focus Complete:
+- Title: “Focus Complete!”
+- Subtext: “25 minutes done”
+- Prominent CTA: “Start Break (5:00)”
+- Label display
+- Minimal celebratory icon placeholder
+
+4. Break Timer (active):
+- Countdown: “05:00”
+- Subtitle: “Break Time”
+- Buttons: Pause | Skip
+
+5. Break Complete:
+- Title: “Break Over!”
+- CTA: “Start Next Focus”
+
+6. Stats:
+- Daily summary box (Pomodoros completed, total minutes)
+- Weekly bar chart (simple rectangles)
+- Top categories (label chips)
+
+7. Settings:
+- Language switcher (EN, HI, TA)
+- Notification toggles (two switches)
+- Exam preset labels list
+- Timezone display
+
+Use consistent spacing, clear alignment, typographic hierarchy, and standard wireframe symbols. Avoid colors or real images. Make the wireframes look like realistic app blueprints ready for implementation.
