@@ -1,3 +1,5 @@
+___________________________________________________________________________________________________________________________
+
 Version 1
 Create a mobile app wireframe for a minimalist Pomodoro productivity app designed for Indian users. The timer is fixed: 25-minute focus and 5-minute break. Breaks DO NOT auto-start; the user manually starts the break. No long breaks. Include UI text in English. The interface should feel calm, clean, modern, spacing similar to Apple’s design language.
 
@@ -43,6 +45,8 @@ Create wireframes for these screens:
 - Timezone: Asia/Kolkata
 
 Use simple greyscale wireframe styling: clear boxes, lines, placeholders, minimal icons. No color styling required. Make everything legible and structured. The output should look like high-fidelity grayscale wireframes for a real mobile app.
+
+___________________________________________________________________________________________________________________________
 
 Version 2
 
@@ -99,3 +103,75 @@ Create the following wireframes:
 - Timezone display
 
 Use consistent spacing, clear alignment, typographic hierarchy, and standard wireframe symbols. Avoid colors or real images. Make the wireframes look like realistic app blueprints ready for implementation.
+
+___________________________________________________________________________________________________________________________
+
+Act as a principal engineer. We are building a MOBILE-ONLY Pomodoro app for India using React Native (Expo) + Supabase. You will follow a staged generator protocol. Do NOT write any code until I say “PROCEED WITH CODE”.
+
+HARD REQUIREMENTS
+- Fixed Pomodoro cycle: Focus 25:00, Break 5:00. No long break. No configurable durations.
+- Break does NOT auto-start; user must tap to start break.
+- Exam presets are labels/tags only (UPSC, JEE, NEET, Work, Coding). Labels never alter durations.
+- Languages: English, Hindi, Tamil (in-app toggle). IST-first defaults.
+- Offline-first using SQLite for local persistence + later sync.
+- Local notifications at end of focus and break; must work in background/terminated state; request permissions gracefully.
+- Auth: Supabase (email magic link + optional phone OTP). No social logins.
+- No community features. Minimal, distraction-free UI.
+
+TECH CHOICES
+- React Native (Expo, TypeScript), React Navigation, Zustand store (or Redux Toolkit with justification), expo-notifications (or Notifee with justification), expo-sqlite, Supabase JS SDK.
+- i18n: react-i18next; resource JSONs for en/hi/ta; Indic-friendly fonts.
+- Optional: Sentry + PostHog plumbing only.
+
+DATA CONTRACT (SPEC ONLY)
+- profiles(id uuid=auth.uid, language en|hi|ta default en, timezone 'Asia/Kolkata', created_at)
+- sessions(id bigint identity, user_id uuid, type 'focus'|'break', planned_minutes 25|5, actual_minutes 0..60, label text, started_at timestamptz, ended_at timestamptz, device_id text, created_at)
+- exam_presets(id serial, title text, description text, locale en|hi|ta, is_active bool)
+- RLS: sessions enable RLS; policy owner-only read/write.
+
+ARCHITECTURE EXPECTATIONS
+- Timer uses a timestamp-diff approach (monotonic reference) to avoid JS interval drift; scheduled local notifications act as ground-truth boundaries.
+- Sync engine: local-first inserts; push to Supabase when online; de-duplicate via deterministic keys (e.g., device_id + started_at ISO). Last-write-wins on conflict.
+- App screens: HomeTimer (idle), FocusActive, FocusComplete (manual Start Break CTA), BreakActive, BreakComplete, Stats, Settings, LabelsPicker, Auth.
+- Stats: Pomodoros/day, total focus minutes (25 × completed focuses), streak (≥1 focus/day), weekly histogram, top labels.
+
+STAGED GENERATION PROTOCOL (DO NOT CODE YET)
+Stage 0 — OUTPUT: Project Blueprint
+- 0.1: Print a final folder/file structure with purposes (no code).
+- 0.2: Print Supabase SQL DDL for tables + RLS (marked “TO APPLY LATER”).
+- 0.3: Print TypeScript interface/type specs for domain models (no implementation).
+- 0.4: Print SQLite schema (mirrors Supabase) + migration notes.
+- 0.5: Print navigation map (routes/screens & params).
+- 0.6: Print notification strategy per platform (permissions, channels, scheduling, handling taps).
+
+Stage 1 — UI Scaffolding (WHEN I SAY “PROCEED WITH CODE”)
+- Generate Expo app baseline, navigation, theme, typography, shared components (Button, Chip, Countdown, Card), and i18n setup (en/hi/ta JSON placeholders).
+
+Stage 2 — Domain State & Timer Engine
+- Zustand stores (session state machine), timer utilities (timestamp-diff), focus/break flows, pause/stop/skip logic, and background-resilient handling.
+
+Stage 3 — Persistence & Sync
+- SQLite repositories, sync queue, reconciliation, device_id strategy, Supabase client init, online/offline detection, RLS-safe inserts/updates.
+
+Stage 4 — Notifications
+- Implement scheduling for end-of-focus (25m) and end-of-break (5m), background tap handling, notification channels (Android), permission UX.
+
+Stage 5 — Screens & Flows
+- Implement HomeTimer, FocusActive, FocusComplete (manual Start Break), BreakActive, BreakComplete, Stats (queries), Settings (language, notif toggles), LabelsPicker, Auth.
+
+Stage 6 — QA & Telemetry
+- Add Sentry + PostHog wiring (optional), lightweight analytics events, a basic Detox test that verifies: start focus → background app → receive notification → resume and complete.
+
+DELIVERABLE FORMAT
+- At Stage 0, only produce structured markdown sections per bullet with filenames, brief descriptions, and code-generation notes. No code in Stage 0.
+- Wait for my explicit phrase “PROCEED WITH CODE” to continue to Stage 1.
+- At each stage, output a file-by-file generation plan first, then the code when I confirm.
+
+ACCEPTANCE CRITERIA (MVP)
+- Accurate end-of-session notifications while app is backgrounded/terminated.
+- Manual break start only (no auto).
+- Fixed durations enforced at the state layer and UI (no settings for duration).
+- Offline session capture + later sync to Supabase with RLS policies.
+- Multilingual UI switch (EN/HI/TA) with correct Indic rendering.
+
+___________________________________________________________________________________________________________________________
