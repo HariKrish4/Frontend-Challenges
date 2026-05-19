@@ -1,3 +1,17 @@
 Thoughtworks coding interview repo file
 
 https://github.com/techops-recsys-lateral-hiring/mobiledev-wechatmoments-reactnative
+
+
+Changes Made:
+1. tweets.slice.ts - Redux State Management
+Added displayedCount and itemsPerPage to the state (initialized to 5 each)
+Added two new reducers:
+loadMoreTweets: Increases displayedCount by 5 when scrolling to bottom
+resetPagination: Resets displayedCount back to 5 on refresh
+Updated all extraReducers to reset pagination on fetch
+2. TweetList.tsx - UI Implementation
+Show only first 5 tweets initially using slice(0, displayedCount)
+Pull-to-Refresh: Dispatches fetchUserTweets and resetPagination to reload fresh data with first 5 items
+Infinite Scroll: onEndReached handler triggers loadMoreTweets when user scrolls to bottom
+onEndReachedThreshold set to 0.5 for smooth loading
